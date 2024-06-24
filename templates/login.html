@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingreso</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 150px;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .mensaje-error {
+            color: red;
+            margin-top: 10px;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        header .logo {
+            font-size: 20px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        header img {
+            height: 55px;
+            margin-right: 20px;
+        }
+
+        header nav {
+            display: flex;
+            margin-left: -20px;
+        }
+
+        header nav a {
+            color: #fff;
+            margin: 0 10px;
+            padding: 5px 10px;
+            text-decoration: none;
+        }
+
+        header nav a:hover {
+            background-color: #0056b3;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='EPN.png') }}" alt="Logo">
+        </div>
+        <nav>
+            <a href="/">Inicio</a>
+            <a href="/registro">Registro</a>
+            <a href="/login">Iniciar Sesión</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Iniciar Sesión</h1>
+        <form method="post">
+            <label for="usuario">Usuario:</label><br>
+            <input type="text" id="usuario" name="usuario"><br>
+            <label for="contrasena">Contraseña:</label><br>
+            <input type="password" id="contrasena" name="contrasena"><br>
+            <input type="submit" value="Iniciar Sesión">
+            {% if mensaje %}
+            <p class="mensaje-error">{{ mensaje }}</p>
+            {% endif %}
+        </form>
+    </div>
+</body>
+
+</html>
