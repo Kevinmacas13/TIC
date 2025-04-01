@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='EPN.png') }}" alt="Logo">
+        </div>
+        <nav>
+            <a href="/">Inicio</a>
+            <a href="/register">Registro</a>
+            <a href="/login">Iniciar Sesión</a>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Registro</h1>
+        <form action="/register" method="post">
+            <label for="usuario">Usuario:</label><br>
+            <input type="text" id="usuario" name="usuario"><br>
+            <label for="contrasena">Contraseña:</label><br>
+            <input type="password" id="contrasena" name="contrasena"><br>
+            <label for="codigorfid">Codigo RFID:</label><br>
+            <input type="text" id="codigorfid" name="codigorfid"><br>
+            <label for="numerocelular">ID Telegram:</label><br>
+            <input type="text" id="idtelegram" name="idtelegram"><br>
+            <input type="submit" value="Registrarse">
+        </form>
+    </div>
+</body>
+
+</html>

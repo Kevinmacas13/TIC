@@ -1,0 +1,26 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de seguridad</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='EPN.png') }}" alt="Logo">
+        </div>
+        <nav>
+            <a href="/">Inicio</a>
+            <a href="/register">Registro</a>
+            <a href="/login">Iniciar Sesión</a>
+        </nav>
+    </header>
+
+    <h1>Túnel de control de acceso</h1>
+    <a href="/register">Registro</a>
+    <a href="/login">Iniciar Sesión</a>
+</body>
+
+</html>

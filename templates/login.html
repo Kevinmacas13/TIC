@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingreso</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='EPN.png') }}" alt="Logo">
+        </div>
+        <nav>
+            <a href="/">Inicio</a>
+            <a href="/register">Registro</a>
+            <a href="/login">Iniciar Sesión</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Iniciar Sesión</h1>
+        <form method="post">
+            <label for="usuario">Usuario:</label><br>
+            <input type="text" id="usuario" name="usuario"><br>
+            <label for="contrasena">Contraseña:</label><br>
+            <input type="password" id="contrasena" name="contrasena"><br>
+            <input type="submit" value="Iniciar Sesión">
+            {% if mensaje %}
+            <p class="mensaje-error">{{ mensaje }}</p>
+            {% endif %}
+        </form>
+    </div>
+</body>
+
+</html>

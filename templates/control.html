@@ -1,0 +1,42 @@
+<head>
+    <title>Registro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='EPN.png') }}" alt="Logo">
+        </div>
+        <nav>
+            <a href="/">Inicio</a>
+            <a href="/register">Registro</a>
+            <a href="/login">Iniciar Sesión</a>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Datos de Ingreso</h1>
+        <table>
+            <tr>
+                <th>Nombre de Usuario</th>
+                <th>Fecha ingreso</th>
+                <th>Hora Inicio</th>
+                <th>Ingreso1</th>
+                <th>Ingreso2</th>
+                <th>Ingreso3</th>
+            </tr>
+            {% for usuario in usuarios %}
+            <tr>
+                <td>{{ usuario[0] }}</td>
+                <td>{{ usuario[1] }}</td>
+                <td>{{ usuario[2] }}</td>
+                <td>{{ usuario[3] }}</td>
+                <td>{{ usuario[4] }}</td>
+                <td>{{ usuario[5] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+
+</html>
